@@ -1,0 +1,17 @@
+name: Ensure issue is authorized
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  ensure-issue-authorization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Check issue authorization and close if unauthorized
+        uses: ./.github/actions/ensure-issue-authorization
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            _This issue outlines an Exercism project. As with all issues in the `exercism/wip` repo, this is an internal issue restricted to the core team. If you have something you need to discuss on this please open an issue at github.com/exercism/exercism._
+          permission: admin
