@@ -1,0 +1,13 @@
+name: Ensure issue authorization
+description: Ensures issues are authorized and automatically closes unauthorized issues
+author: Karlo Nicholas Soriano
+inputs:
+  message:
+    description: Message to comment on the issue before closing
+  permission:
+    description: Permission level needed to be able to create an issue
+  repo-token:
+    description: GitHub token
+runs:
+  using: docker
+  image: Dockerfile
