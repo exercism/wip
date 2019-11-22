@@ -7,7 +7,7 @@ jobs:
   ensure-issue-authorization:
     runs-on: ubuntu-latest
     steps:
-      - uses: exercism/gha-ensure-issue-authorization@v1
+      - uses: exercism/gha-ensure-issue-authorization@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           close-message: |
